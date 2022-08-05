@@ -367,6 +367,7 @@ internal.commands = function(opts)
           local val = selection.value
           local cmd = string.format([[:%s ]], val.name)
 
+          vim.fn.addhist(cmd)
           if val.nargs == "0" then
             vim.cmd(cmd)
           else
